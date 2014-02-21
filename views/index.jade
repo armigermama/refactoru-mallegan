@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	.jumbotron
+		h1 Welcome to #{title}
+		h2 #{port.name}
+
+	img(src="/images/" + port.name + ".jpg")
+
+	p.content #{port.description}
+
+	if port.id === (getAllPorts.length - 1)
+		h3 The end
+	else
+		h3
+			a(href= '/' + nextPort.name) next stop: #{nextPort.name}
