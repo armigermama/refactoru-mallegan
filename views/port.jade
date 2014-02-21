@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	.row
+		.col-sm-10.col-sm-offset-1
+			.jumbotron
+				h2 Welcome to #{title}
+				h1 #{port.name}
+
+			img(src="/images/" + port.name + ".jpg")
+
+			p.content #{port.description}
+
+			if port.id === (getAllPorts.length - 1)
+				h3 The end
+			else
+				.button
+					a.btn.btn-primary.btn-lg.active(href= '/' + nextPort.name) next stop: #{nextPort.name}

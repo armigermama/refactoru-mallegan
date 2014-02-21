@@ -1,16 +1,25 @@
 extends layout
 
 block content
-	.jumbotron
-		h1 Welcome to #{title}
-		h2 #{port.name}
+		.row
+		.col-sm-10.col-sm-offset-1
+			.jumbotron.homewelcome
+					h1 Welcome to #{title}
 
-	img(src="/images/" + port.name + ".jpg")
+				.row
+					img(src='/images/MagellanMap.gif')
+					p.intro= "Join us as we follow in Magellan's footsteps on the first ever circumnavigation of the earth."
 
-	p.content #{port.description}
+				.row.ports
+					.col-sm-4.col-sm-offset-2
+						for port in getAllPorts
+							if port.id < 3
+								h4 #{port.name}
+					.col-sm-4.col-sm-offset-2
+						for port in getAllPorts
+							if port.id > 2
+								h4 #{port.name}
 
-	if port.id === (getAllPorts.length - 1)
-		h3 The end
-	else
-		h3
-			a(href= '/' + nextPort.name) next stop: #{nextPort.name}
+					.buttondiv
+						a.btn.btn-primary.btn-lg.active(href='/' + firstPort.name) First Stop: #{firstPort.name}
+						

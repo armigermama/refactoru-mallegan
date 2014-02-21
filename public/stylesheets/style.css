@@ -1,18 +1,45 @@
+@font-face {
+	font-family: museo;
+	src: url(font/Museo_Slab_500_2-webfont.woff);
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: museo !important;
+  width: 100%;
+  margin: 0 auto;
 }
 
 a {
-  color: #00B7FF;
+	color: silver !important;
 }
 
 img {
 	width: 100%;
 }
 
+.homewelcome {
+	text-align: center;
+}
+
 .content {
 	font-size: 18px;
 	line-height: 200%;
+	padding: 30px 0 30px 0;
+}
+
+.intro {
 	padding-top: 30px;
+	font-size: 20px;
+	text-align: center;	
+}
+
+.ports {
+	padding: 0 20px;
+}
+
+.buttondiv {
+	width: 100%;
+	text-align: center;
+	padding: 115px;
 }
